@@ -1,0 +1,271 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid my-0">
+        <div id="main" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="image">
+                        <img src="{% static 'img/Slide.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="image-filter"></div>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <p class="txt-landing">Мебель от фабрики "Империя мебели" на заказ!</p>
+                        <button onclick="window.location.href='#design';" class="btn-1">Записаться на дизайн</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about us" class="container mt-5">
+        <div class="row justify-content-between">
+            <div class="col-md-6">
+                <div class="col-sm">
+                    <h3>Гарантии</h3>
+                    <div class="rectangle-plus"></div>
+                    <p class="text-plus">
+                        Если Вы обнаружите брак мы вернем вам деньги.
+                    </p>
+                </div>
+                <div class="col-sm">
+                    <h3>Дизайн</h3>
+                    <div class="rectangle-plus"></div>
+                    <p class="text-plus">
+                        Полная кастомизация. Подберем нужную модель, цвет.
+                    </p>
+                </div>
+                <div class="col-sm">
+                    <h3>Оплата</h3>
+                    <div class="rectangle-plus"></div>
+                    <p class="text-plus">
+                        Вы можете оплатить любым удобным для вас способом.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class=" col-md-6 img-bl2">
+                <img class="rounded float-right" src="{% static 'img/IMG_6542.png' %}" width="500" height="350">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container mt-5">
+        <h2 class="h2">Хиты продаж</h2>
+        <div class="row g-5 justify-content-between">
+            <div class="d-flex flex-md-wrap justify-content-between">
+                {% for item in news %}
+                    <div class="col-auto">
+                        <div class="card border-0" style="">
+                            <div class="img border">
+                                <img src="{{ item.image.url }}" alt="{{ item.title }}" class="card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{ item.title }}</h4>
+                                <h5 class="card-title-1">{{ item.content|linebreaks }}</h5>
+                                {% if user.is_authenticated %}
+                                    <div class="comments_form">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            {{ form.as_p }}
+                                            <a href="{% url 'mainapp:add_favorite' item.id %}" class="btn">Добавить в избранное</a>
+                                        </form>
+                                    </div>
+                                {% else %}
+                                    <a href="{% url 'authapp:login' %}"
+                                       class="btn">Добавить в избранное</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="button-two_block">
+                <a href="{% url 'mainapp:catalog_hits' %}" class="btn-all-hits">Смотреть больше..</a>
+            </div>
+        </div>
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <h2>Наши работы</h2>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="info_class">
+                        <div class="img-block">
+                            <img src="{% static 'img/img_2.jpg' %}" class="d-block" alt="..." width="700">
+                        </div>
+                        <div class="text_class">
+                            <div class="text_class_1">
+                                <p class="text-1">Кухонный гарнитур на заказ "Barocca"</p>
+                                <p class="text-2">
+                                    Кухня в стиле городская классика в молочных оттенках создает ощущение чистоты и
+                                    легкости, а светлые оттенки фасадов расширяют кухонное пространство.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="info_class">
+                        <div class="img-block">
+                            <img src="{% static 'img/img_1.jpg' %}" class="d-block" alt="..." width="700">
+                        </div>
+                        <div class="text_class">
+                            <div class="text_class_1">
+                                <p class="text-1">Кухонный гарнитур на заказ "White Prima"</p>
+                                <p class="text-2">Современный стиль оформления кухни достаточно противоречив.
+                                    С одной стороны, он требует минимализма, а с другой, призывает создать
+                                    максимально уютную и удобную обстановку, когда всё находится под рукой.
+                                    Мы объединили всё это в одной кухне. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="info_class">
+                        <div class="img-block">
+                            <img src="{% static 'img/img_3.jpg' %}" class="d-block" alt="..." width="700">
+                        </div>
+                        <div class="text_class">
+                            <div class="text_class_1">
+                                <p class="text-1">Кухонный гарнитур на заказ "Madrid Memory"</p>
+                                <p class="text-2">Дизайн и эстетика кухни сразу будут по достоинству оценены людьми,
+                                    предъявляющими высокие требования к красоте и изяществу форм. Утонченную атмосферу
+                                    роскоши
+                                    создают изящные темно-синие мебельные фасады
+                                    и ненавязчивые легкие декоративные элементы в классическом стиле. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div class="info_class">
+                        <div class="img-block">
+                            <img src="{% static 'img/img_4.jpg' %}" class="d-block" alt="..." width="700">
+                        </div>
+                        <div class="text_class">
+                            <div class="text_class_1">
+                                <p class="text-1">Шкаф на заказ "Brumger"</p>
+                                <p class="text-2">
+                                    Стиль модерн в нашей жизни – это новая классика.
+                                    Он применяется повсеместно, и смотрится эффектно и изысканно.
+                                    Выбор цветового решения зависит от личных вкусов и стиля, в котором
+                                    вы планируете её оформить. Универсальным считается белый цвет,
+                                    пастельные тона придают мягкости, а яркие акценты и штрихи добавят шарма. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div class="info_class">
+                        <div class="img-block">
+                            <img src="{% static 'img/img_5.jpg' %}" class="d-block" alt="..." width="700">
+                        </div>
+                        <div class="text_class">
+                            <div class="text_class_1">
+                                <p class="text-1">Кухонный гарнитур на заказ "Miratona"</p>
+                                <p class="text-2">Можно ли назвать кухню в современном стиле идеальной для дома или
+                                    квартиры?
+                                    Определенно да, если вы - сторонник минимализма. Определенно да, если вы хотите быть
+                                    в тренде.
+                                    И определенно да, если вы любите гармонию, порядок и аккуратность в интерьере. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+            </div>
+        </div>
+
+        <div id="design" class="block-4">
+            <h2 class="h2">Записаться на дизайн</h2>
+            <form class="col-md-12 row d-flex justify-content-between">
+                <div class="form-floating mb-4 col-md-4 mt-4">
+                    <input type="text" class="form-control" id="floatingInput"
+                           placeholder="ФИО">
+                    <label for="floatingInput"></label>
+                </div>
+                <div class="form-floating mb-4  col-md-4 mt-4">
+                    <input type="email" class="form-control" id="floatingPassword" placeholder="E-mail">
+                    <label for="floatingPassword"></label>
+                </div>
+                <div class="form-floating mb-4  col-md-4 mt-4">
+                    <input type="text" class="form-control" id="" placeholder="Номер телефона">
+                    <label for="floatingPassword"></label>
+                </div>
+                <div class="row d-flex justify-content-between align-content-center">
+                    <div class="mb-3 form-check col-md-6" style="margin-left: 10px">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Проверить меня</label>
+                    </div>
+                    <button formaction="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            type="submit"
+                            class="button-entry col-md-6" style="margin-right: -24px">Записаться
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="contact" class="contact-block">
+            <h2 class="h2">Контакты</h2>
+            <div class="row d-flex justify-content-between">
+                <div class="col-md-5">
+                    <p class="txt-contact">Адреса и контакты:</p>
+                    <p class="txt-contact-2">
+                        ТРЦ “РИО” секция 101 -
+                        Тимофея Невежина, 3ст10<br>
+                        8(965)839-26-83</p>
+
+                    <p class="txt-contact-2">
+                        “Мебельная галерея” -
+                        Некрасова 15В<br>
+                        8(965)866-78-71</p>
+
+                    <p class="txt-contact-2">
+                        ТЦ “Некрасов” 1 секция, 1 этаж -
+                        Некрасова 15а<br>
+                        8(909)149-71-02</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="map">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aee22123831c7e43877e8379800d8e3daa6dd52853e86674f3d5ea931694d1920&amp;source=constructor"
+                                width="100%" height="300"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="txt-modal">Вы успешно записались!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#main" title="Вернуться к началу" class="top-button">Наверх</a>
+
+
+    <script src="https://kit.fontawesome.com/9fae8e4a1d.js" crossorigin="anonymous"></script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+{% endblock %}

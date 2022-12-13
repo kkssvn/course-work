@@ -1,0 +1,828 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600&display=swap');
+
+:root {
+    --beige--: #957654;
+}
+
+:root {
+    --brown--: #31231c;
+}
+
+:root {
+    --main-color--: white;
+}
+
+body {
+    background: var(--main-color--);
+    width: 100%;
+    height: 100vh;
+
+}
+
+.container {
+    width: 1525px;
+}
+
+.container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+.btn {
+    background: var(--beige--);
+    color: white;
+    font-family: Mulish;
+    transition: 0s;
+}
+
+.btn:hover {
+    background: var(--brown--);
+    color: white;
+    font-family: Mulish;
+    transition: 0.6s;
+}
+
+label {
+    font-family: Mulish;
+    font-size: 20px;
+    color: var(--brown--);
+}
+
+h1 {
+    font-family: Mulish;
+    font-size: 40px;
+    color: var(--brown--);
+    margin-bottom: 20px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    position: relative;
+}
+
+.image-filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.3;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+}
+
+.navbar {
+    background: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+    width: 100%;
+}
+
+.nav-link a {
+    padding: 10px;
+    color: white;
+    transition: 0s;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--brown--);
+    transition: 0.5s;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: Mulish;
+    font-size: 20px;
+    color: white;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    font-family: Mulish;
+    font-size: 20px;
+    color: var(--brown--);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-left: 10px;
+    font-family: Mulish;
+    font-weight: normal;
+    font-size: 20px;
+    color: white;
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.txt-landing {
+    margin-top: 80px;
+    /*margin-left: 290px;*/
+    /*width: 700px;*/
+    margin-bottom: 30px;
+    font-family: Mulish;
+    color: white;
+    font-size: 50px;
+}
+
+.fa-solid {
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    transition: 0s;
+}
+
+.fa-solid:hover {
+    font-size: 20px;
+    color: var(--brown--);
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.carousel-item img {
+    height: 720px;
+    object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 15px;
+    height: 5px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--beige--);
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    /* opacity: .5; */
+    transition: opacity .6s ease;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 5px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 18%;
+    bottom: 1.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+}
+
+.btn-1 {
+    background: white;
+    color: var(--brown--);
+    border-radius: 5px;
+    font-family: Mulish;
+    font-size: 20px;
+    border: none;
+    height: 50px;
+    width: 250px;
+    margin-left: -85px;
+    margin-top: 10px;
+    transition: 0s;
+}
+
+.btn-1:hover {
+    background: var(--brown--);
+    color: white;
+    border-radius: 5px;
+    font-family: Mulish;
+    font-size: 20px;
+    border: none;
+    height: 50px;
+    width: 250px;
+    margin-left: -85px;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+.border {
+    height: 550px;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.h2 {
+    font-family: Mulish;
+    font-weight: Bold;
+    font-size: 40px;
+    color: var(--brown--);
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: Mulish;
+    font-weight: Bold;
+    font-size: 40px;
+    color: var(--brown--);
+}
+
+.card-img-top {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.card {
+    margin-top: 2rem;
+    width: 400px;
+    height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    color: var(--brown--);
+    background-color: #fff;
+    border-color: var(--beige--);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--beige--);
+    opacity: 0.7;
+}
+
+.form-check-input:focus {
+    background-color: var(--beige--);
+    border-color: var(--beige--);
+}
+
+.form-input {
+    margin-top: 20px;
+    height: 450px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-floating > .form-control {
+    width: 420px;
+    padding: 10px;
+    border: 0;
+}
+
+.form-floating {
+    border-radius: 20px;
+}
+
+.form-floating > label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    padding: 1rem .75rem;
+    pointer-events: none;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+}
+
+.map {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    margin-right: 12px;
+}
+
+.card-title {
+    color: var(--brown--);
+    font-weight: 400;
+    font-family: Mulish;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.card-title-1 {
+    color: var(--brown--);
+    font-weight: 400;
+    font-family: Mulish;
+    font-size: 25px;
+}
+
+.card-text {
+    color: var(--beige--);
+    font-weight: 400;
+    font-family: Mulish;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid var(--beige--);
+    padding-bottom: 1px;
+    transition: 0s;
+}
+
+.card-text:hover {
+    color: var(--brown--);
+    font-weight: 400;
+    font-family: Mulish;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid var(--brown--);
+    padding-bottom: 1px;
+    transition: 0.5s;
+}
+
+.order {
+    margin-top: 20px;
+}
+
+.btn-order {
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    background: var(--beige--);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: Mulish;
+    transition: 0s;
+
+}
+
+.btn-order:hover {
+    width: 200px;
+    height: 35px;
+    text-decoration: none;
+    background: var(--brown--);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: Mulish;
+    transition: 0.5s;
+}
+
+
+.btn-all-hits {
+    margin-bottom: 60px;
+    text-decoration: none;
+    margin-top: -30px;
+    color: var(--beige--);
+    font-size: 25px;
+    line-height: 20px;
+    transition: 0s;
+}
+
+.btn-all-hits:hover {
+    margin-bottom: 60px;
+    text-decoration: none;
+    margin-top: -30px;
+    color: var(--brown--);
+    font-size: 25px;
+    line-height: 20px;
+    transition: 0.5s;
+}
+
+.button-two_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-entry {
+    width: 180px;
+    height: 30px;
+    text-decoration: none;
+    border: none;
+    background: var(--beige--);
+    color: white;
+    border-radius: 5px;
+    font-family: Mulish;
+    transition: 0s;
+}
+
+.button-entry:hover {
+    width: 180px;
+    height: 30px;
+    text-decoration: none;
+    border: none;
+    background: var(--brown--);
+    color: white;
+    border-radius: 5px;
+    font-family: Mulish;
+    transition: 0.5s;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-check-input:checked {
+    background-color: var(--beige--);
+    border-color: var(--beige--);
+    border: 1px solid var(--beige--);
+}
+
+.form-floating:focus {
+    outline: none !important;
+    box-shadow: 0px 0px 5px var(--beige--);
+    -moz-box-shadow: 0px 0px 5px var(--beige--);
+    -webkit-box-shadow: 0px 0px 5px var(--beige--);
+}
+
+.form-check-input:focus {
+    outline: none !important;
+    border: 1px solid var(--beige--);
+    box-shadow: 0px 0px 5px var(--beige--);
+    -moz-box-shadow: 0px 0px 5px var(--beige--);
+    -webkit-box-shadow: 0px 0px 5px var(--beige--);
+}
+
+.text-plus {
+    width: 800px;
+    font-size: 25px;
+    color: var(--brown--);
+    font-family: Mulish;
+    font-weight: 400;
+}
+
+.col-sm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rectangle-plus {
+    width: 700px;
+    height: 1px;
+    background: var(--brown--);
+}
+
+h3 {
+    width: 800px;
+    font-size: 30px;
+    color: var(--brown--);
+    font-family: Mulish;
+    font-weight: bold;
+}
+
+.img-bl2 {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 500px;
+    height: 350px;
+}
+
+.txt-contact-2 {
+    font-size: 20px;
+    color: var(--brown--);
+    font-family: Mulish;
+
+}
+
+.txt-contact {
+    font-size: 25px;
+    color: var(--brown--);
+    font-family: Mulish;
+    text-decoration: underline;
+    font-: 10px;
+}
+
+.info_class {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: -4rem;
+    margin-left: 15%;
+    list-style: none;
+}
+
+.text-1 {
+    font-size: 35px;
+    font-weight: 600;
+    font-family: Mulish;
+    font-weight: bold;
+    color: var(--brown--);
+}
+
+.text-2 {
+    color: var(--brown--);
+    font-size: 30px;
+    font-family: Mulish;
+    font-weight: bold;
+}
+
+.text_class {
+    padding-left: 60px;
+}
+
+.text_class_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-block {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.d-block {
+    border-radius: 5px;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: var(--beige--);
+}
+
+.block-4 {
+    margin-top: 145px;
+}
+
+.contact-block {
+    margin-top: 70px;
+}
+
+.block-end {
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    background: var(--beige--);
+}
+
+.footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-email {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-logo-pay {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pay {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.social-network {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.network {
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+}
+
+.menu {
+    margin-top: 50px;
+}
+
+.fa-brands {
+    font-size: 30px;
+    color: white;
+}
+
+.txt-footer-network {
+    display: flex;
+    width: 300px;
+    font-size: 20px;
+    font-family: Mulish;
+    color: white;
+}
+
+.txt-footer-email {
+    display: flex;
+    width: 300px;
+    font-size: 20px;
+    font-family: Mulish;
+    color: white;
+    text-align: left;
+}
+
+.txt-footer-link {
+    text-decoration: none;
+    display: flex;
+    font-size: 20px;
+    font-family: Mulish;
+    color: white;
+    text-align: left;
+    transition: 0s;
+}
+
+.txt-footer-link:hover {
+    text-decoration: none;
+    display: flex;
+    font-size: 20px;
+    font-family: Mulish;
+    color: var(--brown--);
+    text-align: left;
+    transition: 0.5s;
+}
+
+.form-footer {
+    width: 250px;
+    height: 35px;
+    background: white;
+    color: var(--brown--);
+    font-size: 13px;
+    font-family: Mulish;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+}
+
+.form-footer:hover {
+    width: 250px;
+    height: 35px;
+    background: white;
+    color: var(--brown--);
+    font-size: 13px;
+    font-family: Mulish;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+}
+
+.btn-footer {
+    padding: 5px;
+    width: 150px;
+    height: 35px;
+    background: var(--brown--);
+    color: white;
+    font-size: 13px;
+    font-family: Mulish;
+    border: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.txt-footer {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    font-size: 10px;
+    font-family: Mulish;
+    color: white;
+}
+
+.year {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.top-button {
+    text-decoration: none;
+    width: 100px;
+    border: 1px solid var(--beige--);
+    background: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    color: var(--brown--);
+    font-family: Mulish;
+    font-size: 12px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+.top-button:hover {
+    text-decoration: none;
+    width: 100px;
+    border: 1px solid var(--beige--);
+    background: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    color: var(--brown--);
+    font-family: Mulish;
+    font-size: 12px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+.modal-content {
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.txt-modal {
+    margin-top: 10px;
+    font-size: 25px;
+    font-family: Mulish;
+    font-weight: 400;
+    color: var(--brown--);
+}
+
+.dropdown-item {
+    font-family: Mulish;
+    font-weight: normal;
+    font-size: 18px;
+    color: var(--brown--);
+}
+
+.dropdown-item:hover {
+    position: relative;
+    display: block;
+    padding: .5rem 1rem;
+    color: white;
+    background: var(--brown--);
+    font-size: 18px;
+    font-family: Mulish;
+    text-decoration: none;
+    transition: 0.5s;
+}

@@ -1,0 +1,12 @@
+{% extends 'mainapp/base_2.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h1 style="margin-top: 150px">Регистрация</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %}
